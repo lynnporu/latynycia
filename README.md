@@ -39,7 +39,7 @@
 
 1. Orthography ―//― Orthographia ―//― Ortografia ―//― *Pravopis* ―//― *Pravopis* ―//― Ор**ф**ографія
 
-2. (A)Ether ―//― Aether ―//― Eter ―//― Éter ―//― Eter // Е**ф**ір
+2. (A)Ether ―//― Aether ―//― Eter ―//― Éter ―//― Eter ―//― Е**ф**ір
 
 3. Cathedra ―//― Cathedra ―//― Cathedra ―//― Katedra ―//― Cathedra ―//― Ка**ф**едра
 
@@ -49,8 +49,10 @@
 
 6. Pathos ―//― Pathos ―//― Patos ―//― Patos ―//― Patos ―//― Па**ф**ос
 
-Саме таким чином українська і звучить такою, якою вона повинна звучати. Tomu teper ty możeś na pownomu patosi ignoruwaty mity pro te, śćo z cijeï mowy robliatg nepodobstwo. Jiji prosto prywodatg do normalgnogo wygliadu. (A śće teper my budemo wykorystowuwaty teoremu Pitagora, a w cerkwi bude pahnuty tymijamom, joj).
+Тому, коли вживатимемо "т" на місці грецького диграфу "th", мова зазвучить так, як вона мала би звучати. Otoż, teper ty możeś na pownomu patosi ignoruwaty mity pro te, śćo z cijeï mowy robliatg nepodobstwo. Jiji prosto prywodatg do normalgnogo wygliadu. (A śće teper my budemo wykorystowuwaty teoremu Pitagora, a w cerkwi bude pahnuty tymijamom, joj).
 
-За посиланням вище можеш знайти перелік слів, якими вони мають бути.
+**Однак зауваж,** що іноді не можна просто взяти, і замість "ф" написати "т". По-перше, через те, що, буває, має змінитися сама форма слова (фіміам - тиміям), а по-друге, дуже часто в оригіналі вживається не "th", а "ph", що читається тільки як "ф". Тобто "філософія" і тому подібне такою і залишається.
+
+За посиланням вище можеш знайти перелік слів, що підлягають хірургії.
 ## Свічечка букви Ї
 Власне, якось сумно було би з нею розлучатися. Саме по ній і впізнаються українські тексти. Так як за ъ, що є російським, білоруським ў, казахським ң, німецьким ä умляутом. Тому можна її залишити. Лише при одній умові: неподобство типу "її" все ж таки записуємо як "jiji", бо чотири крапки на купі - то страшне і підсудне. Коли вони хоча би на різних буквах - то це ще можна терпіти.
