@@ -19,12 +19,18 @@ h1 {
   min-height: 3em;
   font-size: 1.2em;
   line-height: 1.35;
+  border: 0;
+  border-bottom: 2px solid lightgray;
+  resize: vertical;
+  background: transparent;
+  transition: .3s;
+  ouline: none;
 }
   </style>
 </head>
 <body>
 <h1>Ukraïnsgka latynycia</h1>
-<textarea id="input" oninput="if(event.keyCode==32) convert(latynka, this); expand(this);" placeholder="Prosto poćnitg wwodyty siudy"></textarea>
+<textarea id="input" onkeyup="if(event.keyCode==32) convert(latynka, this); expand(this);" placeholder="Prosto poćnitg wwodyty siudy"></textarea>
 <script>
 var input = document.getElementById('input'),
     output = document.getElementById('output');
