@@ -30,7 +30,8 @@ h1 {
 </head>
 <body>
 <h1>Ukraïnsgka latynycia</h1>
-<textarea id="input" onkeyup="if(event.keyCode==32) convert(latynka, this); expand(this);" placeholder="Prosto poćnitg wwodyty siudy"></textarea>
+<textarea id="input" onkeyup="if(event.keyCode==32) convert(latynka, this); expand(this);" placeholder="Poćnitg wwodyty siudy kyrylyciu"></textarea>
+<i style="font-size:.7em; color:grey">Поки що користуйся лише маленькими літерами. Будь-яке неправильно написане слово буде ще більш неправильно конвертоване, вважай. Також не завжди спрацьовує відокремнення частки "ся" та "сь" - це неможливо зробити просто технічно. Можна почати писати окремо їх ще не етапі кирилиці, так воно й буде перетворено.</i>
 <script>
 var input = document.getElementById('input'),
     output = document.getElementById('output');
