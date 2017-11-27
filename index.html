@@ -33,6 +33,14 @@ h1 {
 <textarea id="input" onkeydown="if( !isCharacter(event.keyCode) ) convert(latynka, this); expand(this);" placeholder="Poćnitg wwodyty siudy kyrylyciu"></textarea>
 <i style="font-size:.7em; color:grey">Поки що користуйся лише маленькими літерами. Будь-яке неправильно написане слово буде ще більш неправильно конвертоване, вважай. Також не завжди спрацьовує відокремнення частки "ся" та "сь" - це неможливо зробити просто технічно. Можна почати писати окремо їх ще не етапі кирилиці, так воно й буде перетворено.</i>
 <script>
+String.prototype.positionOf = function(subString, index) {
+   return this.indexOf(subString)==-1 ? -1 : this.split(subString, index).join(subString).length;
+}
+
+String.prototype.capitalize = function() {
+   return this.charAt(0).toUpperCase() + this.slice(1);
+}
+
 var input = document.getElementById('input'),
     output = document.getElementById('output');
 
@@ -125,7 +133,12 @@ var latynka = {
     'йо:jo;'+
     'йи:jy;'+
     'ий:ý;'+
-    'нг:nǵ',
+    'нг:nǵ;'+
+    'ья:ia;'+
+    'ьї:ii;'+
+    'ью:iu;'+
+    'ьє:ie;'+
+    'ьй:i',
   afterConsonants : 
     'я:ia;'+
     'ю:iu;'+
@@ -148,20 +161,14 @@ function convert(table, where){
   function replace(rule, after, before){
     rule.forEach((function(item, i, arr){
       var r = [ item.split(':')[0], item.split(':')[1] ];
-      if(after && before)
-        after.split('').forEach((function(l){
-          inText = inText.split( l+r[0]+l ).join( l+r[1]+l );
-        }));
-      else if(after)
-        after.split('').forEach((function(l){
-          inText = inText.split( l+r[0] ).join( l+r[1] );
-        }));
-      else if(before)
-        before.split('').forEach((function(l){
-          inText = inText.split( r[0]+l ).join( r[1]+l );
-        }));
-      else inText = inText.split( r[0] ).join( r[1] );
-    }));
+      if(!after && !before){
+        var c = 0;
+        while( inText.positionOf( r[0], c++ )!==-1 ) inText.replace( r[0], r[1] );
+        c = 0;
+        while( inText.positionOf( r[0].toUpperCase(), c++ )!==-1 ) inText.replace( r[0].toUpperCase(), r[1].toUpperCase() );
+        c = 0;
+        while( inText.positionOf( r[0].capitalize(), c++ )!==-1 ) inText.replace( r[0].capitalize(), r[1].capitalize() );
+      }
   }
   if(table.words) replace( sort(table.words) );
   if(table.afterConsonants) replace( sort(table.afterConsonants), table.consonants );
