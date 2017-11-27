@@ -31,7 +31,7 @@ h1 {
 <body>
 <h1>Ukraïnsgka latynycia</h1>
 <textarea id="input" onkeydown="if( !isCharacter(event.keyCode) ) convert(latynka, this); expand(this);" placeholder="Poćnitg wwodyty siudy kyrylyciu"></textarea>
-<i style="font-size:.7em; color:grey">Поки що користуйся лише маленькими літерами. Будь-яке неправильно написане слово буде ще більш неправильно конвертоване, вважай. Також не завжди спрацьовує відокремнення частки "ся" та "сь" - це неможливо зробити просто технічно. Можна почати писати окремо їх ще не етапі кирилиці, так воно й буде перетворено.</i>
+<i style="font-size:.7em; color:grey">Будь-яке неправильно написане слово буде ще більш неправильно конвертоване, вважай. Також не завжди спрацьовує відокремнення частки "ся" та "сь" - це неможливо зробити просто технічно. Можна почати писати окремо їх ще не етапі кирилиці, так воно й буде перетворено.</i>
 <script>
 String.prototype.positionOf = function(subString, index) {
    return this.indexOf(subString)==-1 ? -1 : this.split(subString, index).join(subString).length;
@@ -153,22 +153,29 @@ function convert(table, where){
     if( !(rule instanceof Array) )
     return rule.split(';').sort((function(a,b){
       var c = [a.split(':')[0].length, b.split(':')[0].length];
-      if( c[0] >  c[1] ) return -1
-      if( c[0] <  c[1] ) return 1;
+      if( c[0] > c[1] ) return -1
+      if( c[0] < c[1] ) return 1;
       return 0;
     }));
   }
   function replace(rule, after, before){
-    rule.forEach((function(item, i, arr){
-      var r = [ item.split(':')[0], item.split(':')[1] ];
-      if(!after && !before){
-        var c = 0;
-        while( inText.positionOf( r[0], c++ )!==-1 ) inText.replace( r[0], r[1] );
-        c = 0;
-        while( inText.positionOf( r[0].toUpperCase(), c++ )!==-1 ) inText.replace( r[0].toUpperCase(), r[1].toUpperCase() );
-        c = 0;
-        while( inText.positionOf( r[0].capitalize(), c++ )!==-1 ) inText.replace( r[0].capitalize(), r[1].capitalize() );
-      }
+    function _replace(what, to){
+      var c = 0;
+      while( inText.positionOf( what, c++ )!==-1 )
+        inText = inText.replace( what, to );
+    }
+    if(!after) after = ['']; else after = after.split('');
+    if(!before) before = ['']; else before = before.split('');
+    rule.forEach((function(o){
+      after.forEach((function(a){
+        before.forEach((function(b){
+          var r = [ a+o.split(':')[0]+b, a+o.split(':')[1]+b ];
+          _replace( r[0], r[1] );
+          _replace( r[0].capitalize(), r[1].capitalize() );
+          _replace( r[0].toUpperCase(), r[1].toUpperCase() );
+        }));
+      }));
+    }));
   }
   if(table.words) replace( sort(table.words) );
   if(table.afterConsonants) replace( sort(table.afterConsonants), table.consonants );
@@ -186,7 +193,7 @@ function expand(textarea){
 }
 
 function isCharacter(c){
-  return (c>=65&&c<=90) || [186,188,190,219,221,222,8,46].some( (function(i){ return c==i; }) );
+  return (c>=65&&c<=90) || [186,188,190,219,221,222,8,46].some( i => i==c );
 }
 </script>
 </body>
