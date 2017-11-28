@@ -30,7 +30,7 @@ h1 {
 </head>
 <body>
 <h1>Ukraïnsgka latynycia</h1>
-<textarea id="input" onkeydown="if( !isCharacter(event.keyCode) ) convert(latynka, this); expand(this);" placeholder="Poćnitg wwodyty siudy kyrylyciu"></textarea>
+<textarea id="input" spellcheck="false" onkeydown="if( !isCharacter(event.keyCode) ) convert(latynka, this); expand(this);" placeholder="Poćnitg wwodyty siudy kyrylyciu"></textarea>
 <i style="font-size:.7em; color:grey">Будь-яке неправильно написане слово буде ще більш неправильно конвертоване, вважай. Також не завжди спрацьовує відокремнення частки "ся" та "сь" - це неможливо зробити просто технічно. Можна почати писати окремо їх ще не етапі кирилиці, так воно й буде перетворено.</i>
 <script>
 String.prototype.positionOf = function(subString, index) {
@@ -164,8 +164,8 @@ function convert(table, where){
       while( inText.positionOf( what, c++ )!==-1 )
         inText = inText.replace( what, to );
     }
-    if(!after) after = ['']; else after = after.split('');
-    if(!before) before = ['']; else before = before.split('');
+    after = !after ? [''] : after.split('');
+    before = !before ? [''] : before.split('');
     rule.forEach((function(o){
       after.forEach((function(a){
         before.forEach((function(b){
