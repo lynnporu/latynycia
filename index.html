@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
-  <title>Ukraïnsgka latynycia</title>
+  <title>Ukraïnska latynycia</title>
   <style>
 body {
   background: white;
@@ -29,23 +29,20 @@ h1 {
   </style>
 </head>
 <body>
-<h1>Ukraïnsgka latynycia</h1>
+<h1>Ukraïnska latynycia</h1>
 <textarea id="input" spellcheck="false" onkeydown="if( !isCharacter(event.keyCode) ) convert(latynka, this); expand(this);" placeholder="Poćnitg wwodyty siudy kyrylyciu"></textarea>
 <i style="font-size:.7em; color:grey">Будь-яке неправильно написане слово буде ще більш неправильно конвертоване, вважай. Також не завжди спрацьовує відокремнення частки "ся" та "сь" - це неможливо зробити просто технічно. Можна почати писати окремо їх ще не етапі кирилиці, так воно й буде перетворено.</i>
 <script>
 String.prototype.positionOf = function(subString, index) {
    return this.indexOf(subString)==-1 ? -1 : this.split(subString, index).join(subString).length;
 }
-
 String.prototype.capitalize = function() {
    return this.charAt(0).toUpperCase() + this.slice(1);
 }
-
 var input = document.getElementById('input'),
     output = document.getElementById('output');
-
 var latynka = {
-  vowels : 'аіуеои',
+  vowels : 'аіуеоияїює',
   consonants : 'бвгґджзйклмнпртсфхцчшщ',
   words : 
     'анафем:anatem;'+
@@ -72,12 +69,12 @@ var latynka = {
     'карфаген:kartagen;'+
     'коринф:korynt;'+
     'парфеон:parteon;'+
-    'фіви:teby;'+
-    'фівс:tebs;'+
+    'фів:teb;'+
+    'фівськ:tebsk;'+
     'фермопіл:termopil;'+
     'фесалі:tesali;'+
     'фракі:traki;'+
-    'фракc:traks;'+
+    'фракcь:traks;'+
     'амалфе:amalte;'+
     'голіаф:goliat;'+
     'демосфен:demosten;'+
@@ -139,15 +136,25 @@ var latynka = {
     'ьї:ii;'+
     'ью:iu;'+
     'ьє:ie;'+
-    'ьй:i',
+    'ьй:i;'+
+    'ськ:sk;'+
+    'цьк:ck;'+
+    'зьк:zk;'+
+    'ія:ia',
   afterConsonants : 
     'я:ia;'+
     'ю:iu;'+
     'є:ie;'+
     'ьо:io;'+
-    'ьи:iy',
+    'ьи:iy;'+
+    'ях:iagh;'+
+    'їх:igh;'+
+    'юх:iugh;'+
+    'єх:iegh',
+  afterVowels :
+    'х:gh;'+
+    'вся:w sia'
 }
-
 function convert(table, where){
   var inText = input.value;
   function sort(rule){
@@ -179,20 +186,18 @@ function convert(table, where){
     }));
   }
   if(table.words) replace( sort(table.words) );
-  if(table.afterConsonants) replace( sort(table.afterConsonants), table.consonants );
-  if(table.beforeConsonants) replace( sort(table.beforeConsonants), false, table.consonants );
   if(table.afterVowels) replace( sort(table.afterVowels), table.vowels );
   if(table.beforeVowels) replace( sort(table.beforeVowels), false, table.vowels );
+  if(table.afterConsonants) replace( sort(table.afterConsonants), table.consonants );
+  if(table.beforeConsonants) replace( sort(table.beforeConsonants), false, table.consonants );
   if(table.letters) replace( sort(table.letters) );
   if(where) return where.value = inText;
   return output.value = inText;
 }
-
 function expand(textarea){
   textarea.style.height = ''; 
   textarea.style.height = textarea.scrollHeight + 'px';
 }
-
 function isCharacter(c){
   return (c>=65&&c<=90) || [186,188,190,219,221,222,8,46].some( i => i==c );
 }
