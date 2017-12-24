@@ -17,3 +17,8 @@
 
 ## Перекласифікування майбутнього недоконаного часу
 Тепер цілком логічно було би називати дієслова із зміненою приставкою "бути" (будемо робити, будеш читати) "складеними", а із допоміжним дієсловом - "відтіненими", адже в такий спосіб ми, вважай, дещо змінили, тобто відтінили зміст слова.
+
+## Застосування при латинізації
+Koly my śukaty memo zgublený u dżunǵliagh drewnij hram, to obowjazkowo zustrinemo śćosg bilgśe.
+Jty me dość, ne swityty me bilgś nebo, wyżywe lyś weletenska ryba.
+Doky swityty mutg zori, doty ja pryghodyty mu do tebe.
