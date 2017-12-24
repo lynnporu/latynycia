@@ -20,5 +20,8 @@
 
 ## Застосування при латинізації
 Koly my śukaty memo zgublený u dżunǵliagh drewnij hram, to obowjazkowo zustrinemo śćosg bilgśe.
+
 Jty me dość, ne swityty me bilgś nebo, wyżywe lyś weletenska ryba.
+
 Doky swityty mutg zori, doty ja pryghodyty mu do tebe.
+
