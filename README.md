@@ -5,17 +5,23 @@ _Оновлено 02.01.2018_
 
 # Диграфи
 Для грецьких запозичених слів відновлюємо традиційне написання за латинським манером.
+
 **Th:** anthena, theorema, ether, mith, orthographia
+
 **Ph:** philosophia, phantom, phantazm
+
 Окрім того відтворюємо слова в оригінальному правописі:
+
 **Au:** automatyćný, audytoria, audio
 
 # Голосні після "і"
 Голосні після "і" завжди йотовані: hierogliph _/ijeroglif/_, radiacia _/radiacija/_, potencial _/potencijal/_, kawiar _/kavjar/_
+
 **Однак** ігноруємо йотування після подвоєної і: bariiatria, śariiat. (Правило повторено для уточнення).
 
 # "Л" перед приголосними
 "Л" перед приголосними не потрібно пом'якшувати, оскільки вона й так м'яка: Hmelnycký, kalmary, palba.
+
 Але коли треба тверду, то пишемо "h", яка, як узгоджено раніше, не читається: kolhba, Kolhghida, kolhky.
 
 # "H" для позначення емоцій
@@ -23,8 +29,10 @@ _Оновлено 02.01.2018_
 
 # Факультативне вживання решти латинських літер
 **X:** Olexander, aproxymacia, xylophon, Olexij
+
 **Q:** Aquitania, morqua, Mosqua, quity
 
 # Уникнення збігу приголосна+"р"
 Відтворюємо написання як у правописі-28: meter, Olexander, filter, cylinder.
+
 Але ця властивість зникає при відмінювання: metra, Olexandru
